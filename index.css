@@ -1,0 +1,867 @@
+* {
+    font-family: "sen", sans-serif;
+    font-weight: 90;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, #fff, #bbb);
+    margin: 0;
+    max-width: 100%; /* Establece el ancho máximo del cuerpo al 100% del ancho de la ventana */
+    overflow-x: hidden;
+}
+
+
+.banner {
+    color: #721c24; /* Color de texto rojo oscuro */
+    text-align: center;
+    padding: 5px 0; /* Ajustar el padding según sea necesario */
+    margin: 0; /* Eliminar el margen */
+    line-height: 14px; /* Ajustar el alto de línea para que coincida con el tamaño de la fuente */
+    font-size: 14px;
+    background-color: #f8d7da; /* Color de fondo rojo claro */
+}
+
+.banner a {
+    color: #721c24; /* Color de enlace rojo oscuro */
+    text-decoration: underline;
+}
+
+
+.nav__responsive-ul {
+    display: none;
+}
+/* van de descuentooo */
+.discount-banner {
+    background-color: #f8d7da; /* Color de fondo rojo claro */
+    color: #721c24; /* Color de texto rojo oscuro */
+    padding: 6px;
+    text-align: center;
+}
+
+.banner-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.discount-banner h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.discount-banner p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff; /* Color del texto blanco */
+    background-color: #28a745; /* Color de fondo verde */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+ /* termino */
+
+.btn:hover {
+    background-color: #218838; /* Cambia el color de fondo al pasar el mouse */
+}
+nav {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    text-align: right;
+    border-bottom: 3px solid #0a1145;
+}
+
+.nav__li {
+    display: inline-block;
+    padding: 12px;
+    color: dark#000000;
+}
+
+.nav__li:hover > a {
+    color: #bbb;
+}
+
+.nav__li:hover > i {
+    color: #bbb;
+}
+
+.nav__li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.nav__li i {
+    box-sizing: border-box;
+    text-align: right;
+    margin-left: 5px;
+}
+
+.nav__responsive-button.container {
+    position: absolute;
+    width: 100%;
+    font-size: 25px;
+    z-index: 100;
+}
+
+.nav__responsive-button {
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #1e242a;
+    padding: 10px;
+    z-index: 2;
+}
+
+
+
+.img_contenedor {
+    position: absolute;
+}
+
+.img_contenedor_si {
+    position: absolute;
+    border-radius: 30%;
+    width: 80px;
+    height: 70px; /* Ajusta según sea necesario */
+    /* Elimina la línea width: right; ya que no es una propiedad válida */
+    top: 55px; /* aca recorta el espacio del logo  */
+    left: 20px;
+}
+
+.contendor2img {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+}
+
+.imgen_porque {
+    position: relative;
+    top: 50px;
+    left: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.img_contenedor2 {
+    position: absolute;
+}
+
+.img_contenedor_sii {
+    position: relative;
+    border-radius: 30%;
+    width: 80px;
+    height: 70px;
+    /* Elimina la línea width: right; ya que no es una propiedad válida */
+    top: 10px;
+    left: 20px;
+}
+@media only screen and (max-width: 767px) {
+    .nav__ul {
+        display: none;
+    }
+    header.hide {
+        display: none;
+    }
+    .fixed-center {
+        display: block; /* Mostrar automáticamente cuando el ancho de la ventana es 500 px o menos */
+    }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    header.hide-nav .nav__responsive-ul {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    
+    header.hide-nav .nav__responsive-ul.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    header.hide-nav.transparent {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .nav__responsive-ul {
+        display: none;
+    }
+    
+    /* Cuando tiene la clase 'mostrar', la barra de navegación será visible */
+    .nav__responsive-ul.mostrar {
+        display: block;
+        /* Ajusta otros estilos según sea necesario */
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .nav__responsive-ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        background-color: #1e242a;
+        flex-direction: column;
+        position: fixed;
+        top: 0; /* Modificado para que inicie desde la parte superior */
+        left: 0;
+        right: 0;
+        bottom: 0; /* Ajuste para cubrir toda la pantalla */
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .nav__toggle {
+        cursor: pointer;
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #000000;
+        padding: 10px;
+        z-index: 2;
+    }
+
+    .nav__responsive-ul {
+        list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #747474;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    .nav__responsive-li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .nav__responsive-li a {
+        padding: 10px;
+        display: block;
+        color: #000000;
+        text-decoration: none;
+    }
+    
+    .nav__toggle {
+        cursor: pointer;
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #000000;
+        padding: 10px;
+        z-index: 2;
+    }
+    
+    .nav__icon {
+      
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+    }
+    
+  
+
+    .nav__responsive-li i {
+        box-sizing: border-box;
+        text-align: center;
+        margin-right: 10px;
+        width: 50px;
+        color: rgb(0, 0, 0);
+        margin-top: 50px;
+    }
+}
+ /*imagenes carruzel primero */
+ 
+ .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    gap: 0; /* Elimina cualquier espacio entre las imágenes */
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    height: 100%;
+}
+
+.carousel-image {
+    flex: 0 0 100%; /* Asegura que cada imagen ocupe el 100% del contenedor */
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: -webkit-optimize-contrast; /* Propiedad para mejorar la calidad de la imagen */
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode: bicubic;
+}
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    font-size: 24px; /* Tamaño del texto */
+    font-style: italic;
+    font-weight: bold;
+    color: #000000;
+    padding: 30px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    font-size: 2em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Efecto de destello blanco */
+}
+    
+/*terminoooo*/
+
+
+.image-container {
+    position: relative;
+  
+}
+
+.image-text {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    display: none;
+}
+
+.image-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.image-text p {
+    font-size: 1.2em;
+    margin: 0;
+}
+@media (max-width: 900px) {
+    .carousel-image {
+        height: auto; /* Hace que la altura sea automática para adaptarse al contenido */
+        width: 100%; /* Ajusta el ancho al 100% */ 
+    }
+    .carousel-text h1 {
+        font-size: 5vw; /* Utiliza unidades de vista para el tamaño del texto */
+        max-width: 100%; /* Asegura que el texto no se vuelva demasiado pequeño en pantallas muy pequeñas */
+    
+    }
+    .carousel-text p {
+        font-size: 4vw; /* Utiliza unidades de vista para el tamaño del texto */
+        max-width: 100%; /* Asegura que el texto no se vuelva demasiado pequeño en pantallas muy pequeñas */
+    
+    }
+
+
+
+}
+/* cuadrojoyeria  */
+
+
+.fixed-center {
+    position: fixed;
+    top: -90px; /* Inicialmente oculto fuera de la pantalla */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    padding: 0px;
+    width: 100%;
+    transition: top 0.3s ease-in-out; /* Agrega una transición suave para el efecto */
+    margin-top: 0px;
+    z-index: 1; 
+    max-height: 40px;
+    line-height: 5px;
+}
+
+.fixed-center.show {
+    top: 0; /* Muestra el elemento cuando tiene la clase "show" */
+}
+
+.hidden {
+    display: none;
+}
+
+.content {
+    /* Ajusta el margen superior del contenido principal para evitar que se solape con el contenedor fijo */
+    margin-top: 10px;
+    /* Puedes ajustar este valor según sea necesario */
+    /* Agrega estilos adicionales según sea necesario para el contenido principal */
+}
+ /*ALMEDIO*/
+ .cuadro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0px;
+    max-width: 100%;
+  }
+
+  .seccion {
+    flex: 1;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .titulo-con-icono {
+    display: flex;
+    align-items: center;
+  }
+  
+  .titulo-con-icono img {
+    margin-right: 30px;
+    height: auto; 
+  }
+  .icono-chico {
+    width: 30px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Esto asegura que la altura se ajuste proporcionalmente al ancho */
+  }
+  .titulo-con-icono h1 {
+    font-size: 1.0vw; /* Utiliza unidades de vista para el tamaño del texto */
+    max-width: 100%; /* Asegura que el texto no se vuelva demasiado pequeño en pantallas muy pequeñas */
+}
+.seccion p {
+    font-size: 1vw; /* Utiliza unidades de vista para el tamaño del texto */
+    max-width: 100%; /* Asegura que el texto no se vuelva demasiado pequeño en pantallas muy pequeñas */
+}
+
+@media (max-width: 600px) {
+    .seccion {
+        flex-basis: calc(50% - 20px); /* Establece el ancho de cada sección a aproximadamente el 48% */
+    }
+    
+    .titulo-con-icono h1 {
+        font-size: 2vw; /* Utiliza unidades de vista para el tamaño del texto */
+        max-width: 100%; /* Asegura que el texto no se vuelva demasiado pequeño en pantallas muy pequeñas */
+    }
+    .icono-chico {
+        width: 25px; /* Ajusta el tamaño según tus necesidades */
+        height: auto; /* Esto asegura que la altura se ajuste proporcionalmente al ancho */
+      }
+      .seccion p {
+        font-size: 2vw; /* Utiliza unidades de vista para el tamaño del texto */
+        max-width: 100%; /* Asegura que el texto no se vuelva demasiado pequeño en pantallas muy pequeñas */
+    }
+}
+  /* joyas almedio mujeres colgantes etc..*/
+  .seccion-imagenes {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contenedor-imagenes {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .imagen-grande {
+    position: relative;
+    width: 50%; /* Establece el ancho de la imagen grande al 70% del contenedor */
+    flex-shrink: 0; /* Evita que la imagen grande se encoja para adaptarse */
+  }
+  
+  .texto-imagen-grande {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   color: #bbb;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%; /* Asegura que el texto se extienda por completo */
+  }
+
+  
+  /* Estilos para las imágenes pequeñas */
+  .imagenes-pequenas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+  }
+  
+  .imagen-pequena {
+    position: relative;
+    flex: 1 0 calc(50% - 5px); /* Cada imagen pequeña ocupa el 50% del ancho disponible con espacio entre ellas */
+    margin-bottom: 10px; /* Ajusta el margen según tus necesidades */
+  }
+  
+  .texto-imagen-pequena {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #bbb;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  /* Estilos para todas las imágenes */
+  .seccion-imagenes img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+/* Consulta de medios para adaptar las imágenes pequeñas en pantallas más pequeñas */
+@media (max-width: 768px) {
+   
+    .imagen-grande {
+        width: 100%; /* Establece el ancho de la imagen grande al 100% para ocupar toda la pantalla */
+      }
+      .imagenes-pequenas {
+        display: none; /* Oculta el contenedor de imágenes pequeñas y su texto */
+    }
+    }
+  /*joyas mas venidas*/
+  .joyas-container {
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
+    text-align: center;
+   
+}
+
+.joyas-title {
+    color: black;
+    margin-bottom: 10px;
+}
+.joyas-slider-wrapper {
+    margin-left: 30px; /* Ajusta el margen izquierdo según sea necesario */
+    overflow: hidden;
+}
+
+
+.joyas-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+   
+}
+
+.joya-item {
+    flex: 0 0 calc(100% / 6);
+    max-height: 200px; /* Altura máxima del contenedor de joya */
+    margin: 20px 5px 10px 30px; 
+}
+
+.joyas-slider img {
+    max-width: 100%; /* La imagen no se agranda más allá de su tamaño original */
+    height: auto;
+    max-height: 150px; /* Altura máxima de la imagen de joya */
+}
+
+.joya-details {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    text-align: left;
+}
+
+.joya-name {
+    margin: 0;
+}
+
+.joya-price {
+    margin: 5px 0 0;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.joyas-prev {
+    left: 10px;
+}
+
+.joyas-next {
+    right: 10px;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 4em;
+    cursor: pointer;
+    color: black;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border: none;
+    outline: none;
+    
+}
+
+.arrow-left {
+    left: 5px;
+}
+
+.arrow-right {
+    right: 5px;
+}
+ /*efecto parallax*/
+ .custom-container {
+    width: 100%;
+    bottom: 100%;
+    overflow: hidden;
+}
+
+.custom-parallax-container {
+    width: 100%;
+    height: 40vh; /* Ajusta la altura como desees */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Color del texto en la sección */
+    background: #fff fixed no-repeat 50% 50%;
+    background-size: auto;
+    background-image: url("15275718_bride03.webp");
+    
+    
+}
+@media screen and (max-width: 900px) {
+    
+    .custom-parallax-container {
+      
+        height: 20vh; /* Cambiar la altura al 100% de la altura de la pantalla */
+
+    }
+}
+
+ /*efecto parallax termino*/
+ /*famoooosoooos*/
+ .famosos-container {
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
+}
+
+.famosos-slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.famoso-item {
+    position: relative;
+    flex: 0 0 calc(100% / 3);
+    text-align: center;
+}
+
+.famosos-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.famoso-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+@media screen and (max-width: 700px) {
+    .dots-container {
+        display: none;
+    }
+    .famosos-container {
+        overflow: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+        white-space: nowrap; /* Evitar desbordamiento de línea */
+        overflow-y: hidden; 
+    }
+
+    .famosos-slider {
+        width: auto; /* Ancho automático para adaptarse al contenido */
+        display: flex;
+        flex-direction: row; /* Mostrar las imágenes en una fila en pantallas pequeñas */
+    }
+
+    .famoso-item {
+        flex: 0 0 100vw; /* Ancho igual al ancho de la pantalla */
+        height: 80vh;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .famoso-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+    .controls-container {
+        display: none; /* Ocultar completamente el contenedor de controles en pantallas pequeñas */
+    }
+
+} 
+ /*pie de paguina*/
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    background-color: rgb(237, 237, 237);
+    width: 100%;
+    color: #000000 !important;
+    margin: 5px;
+    height: 150px;
+    text-align: center;
+    text-transform: none;
+    min-height: 230px;
+    flex: 1;
+    border-bottom: 2px solid #0a1145;
+    box-sizing: border-box;
+}
+
+.img_contenedor_sii {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons-item {
+    list-style-type: none; /* Quita las viñetas */
+    text-decoration: none;
+    color: #333;
+    font-size: 15px; /* Ajusta el tamaño del icono según sea necesario */
+    margin-right: 20px; /* Espacio entre los iconos */
+    transition: color 0.3s ease;
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.social-icons-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-icons-link:hover {
+    color: #007bff;
+}
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    padding: 10px; /* Aumenté el padding para hacerla más cuadrada */
+    border-radius: 10px; /* Ajusta según tus preferencias */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Hice la sombra más grande para un efecto más pronunciado */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: right 0.3s ease;
+}
+
+.whatsapp-chat a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.whatsapp-chat img {
+    width: 35px; /* Aumenté el tamaño del icono */
+    margin-right: 15px; /* Aumenté el espacio entre el icono y el texto */
+    border-radius: 50%;
+}
+
+.whatsapp-chat span {
+    font-weight: bold;
+}
+.whatsapp-chat img {
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    filter: brightness(0) invert(1); /* Invierte los colores (blanco y negro) */
+}
+
+.whatsapp-chat img.green-icon {
+    filter: none; /* Restaura el color original de la imagen */
+}
